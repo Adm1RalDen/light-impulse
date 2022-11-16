@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
+
+import Logotype from '~/svg/logo-black.svg';
+
 const links = [
   { href: '/', label: 'About' },
   { href: '/', label: 'Contact' },
 ];
-
-import Logotype from '~/svg/logo-black.svg';
 
 export default function Header() {
   return (
