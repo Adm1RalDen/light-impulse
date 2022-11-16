@@ -1,10 +1,7 @@
 import * as React from 'react';
 
+import ArrowLink from '@/components/links/ArrowLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
-const links = [
-  { href: '/', label: 'About' },
-  { href: '/', label: 'Contact' },
-];
 
 import Logotype from '~/svg/logo-black.svg';
 
@@ -12,20 +9,16 @@ export default function Header() {
   return (
     <header className='sticky top-0 z-50 bg-black'>
       <div className='layout flex items-center justify-between'>
-        <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
+        <UnstyledLink
+          href='/'
+          className='flex items-center gap-3 text-lg font-bold text-yellow-300'
+        >
           <Logotype className='text-6xl' />
+          Light Impulse
         </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4 text-white'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <ArrowLink href='#' className='h-8 text-sm text-yellow-300'>
+          Estimate Your Project
+        </ArrowLink>
       </div>
     </header>
   );
