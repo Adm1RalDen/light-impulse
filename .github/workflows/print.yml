@@ -2,7 +2,7 @@ name: Print Pull Request Context
 on: 
   push:
     branches:
-      - master
+      - main
 jobs: 
   print:
     runs-on: ubuntu-latest
