@@ -1,0 +1,25 @@
+name: Build
+on: 
+  workflow_dispatch:
+  push:
+    branches: 
+      - main
+      
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+        
+      - name: Install deps
+        run: npm ci
+        
+      - name: Build project
+        run: npm run build
+        
+      - name: Upload Articfacts
+        uses: actions/upload-artifacts@v3
+        with:
+          path: build
+          name: build-files
